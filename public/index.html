@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+
+ <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Mercado</title>
+
+	<link rel="stylesheet" type="text/css" href="css/main.css">
+
+    <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+<header>
+   <nav class="navbar navbar-default">
+      <div class="container-fluid">
+         <!-- Brand and toggle get grouped for better mobile display -->
+         <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Mercado Valemobi</a>
+         </div>
+         <!-- Collect the nav links, forms, and other content for toggling -->
+         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+               <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+               <li><a href="#" id="botaoAdicionarProduto">Adicionar Produto</a></li>
+               <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Categorias de Produtos <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="#">Eletrodomésticos</a></li>
+                     <li role="separator" class="divider"></li>
+                     <li><a href="#">Eletrônicos</a></li>
+                     <li role="separator" class="divider"></li>
+                     <li><a href="#">Lazer e esporte</a></li>
+                  </ul>
+               </li>
+            </ul>
+
+            <form class="navbar-form navbar-left" role="search">
+               <div class="form-group">
+                  <input type="text" class="form-control" placeholder="Search">
+               </div>
+               <button type="button" class="btn btn-default">Submit</button>
+            </form>
+            <ul class="nav navbar-nav navbar-right">
+               <li><a href="#">Carrinho de Compras</a></li>
+               <li class="dropdown">
+                  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Minha Conta <span class="caret"></span></a>
+                  <ul class="dropdown-menu">
+                     <li><a href="#">Meu Perfil</a></li>
+                     <li><a href="#">Histórico de Compras</a></li>
+                     <li role="separator" class="divider"></li>
+                     <li><a href="#">Sair</a></li>
+                  </ul>
+               </li>
+            </ul>
+         </div>
+         <!-- /.navbar-collapse -->
+      </div>
+      <!-- /.container-fluid -->
+   </nav>
+</header>
+
+<body class="pagina">
+
+<div id="formNovoProduto" class="container" >
+    <h1 class="well" >Novo Produto</h1>
+  <div class="col-lg-12 well">
+  <div class="row">
+        <form>
+          <div class="col-sm-12">
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>Nome do Produto</label>
+                <input type="text" id="nomeProduto" placeholder="ex: Computador Novo" class="form-control">
+              </div>
+            </div>          
+            <div class="form-group">
+              <label>Descrição</label>
+              <textarea id="descricaoProduto" placeholder="ex: Produto novo, processador i7, 8GB RAM..." rows="3" class="form-control"> </textarea>
+            </div>  
+            <div class="row">
+              <div class="col-sm-4 form-group">
+                <label>Preço da Oferta</label>
+                <input id="precoProduto" type="text" placeholder="ex: 3.999" class="form-control">
+              </div>  
+              <div class="col-sm-4 form-group">
+                <label>Código da Oferta</label>
+                <input type="text" id="codigoProduto" placeholder="ex: 43433" class="form-control">
+              </div>  
+              <div class="col-sm-4 form-group">
+                <label>Tipo de Negócio:</label>
+                  <select class="form-control" id="tipoNegocio">
+                    <option>Compra</option>
+                    <option>Venda</option>
+                  </select>
+              </div>    
+            </div>
+            <div class="row">
+              <div class="col-sm-6 form-group">
+                <label>Categoria do Produto:</label>
+                  <select class="form-control" id="categoriaNegocio">
+                    <option>Eletrodoméstico</option>
+                    <option>Eletrônico</option>
+                    <option>Lazer e Esportes</option>
+                  </select>
+              </div>   
+                 
+              <div class="col-sm-6 form-group">
+                <label>Quantidade:</label>
+                  <select class="form-control" id="quantidade">
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                    <option>4</option>
+                    <option>5</option>
+                    <option>6</option>
+                    <option>7</option>
+                    <option>8</option>
+                    <option>9</option>
+                    <option>10</option>
+                  </select>
+                </div>            
+    </div>   
+          <button type="submit" class="btn btn-lg btn-info" id="enviarForm">Submit</button>          
+          </div>
+        </form> 
+        </div>
+  </div>
+  </div>
+   <div class="container">
+      <div class="row">
+      <div id="produtos">
+         
+      
+         <div class="col-sm-6 col-md-4">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h3 class="panel-title" class="nomeProduto">Smart TV LED Full HD 43"</h3>
+                  <p class="categoriaProduto">Eletrodoméstico</p>
+                  <div class="quantidadeProduto">Qtde.5</div>
+               </div>
+               <div class="panel-body">
+                  
+                     <img class="imagemProduto" src="https://static.wmobjects.com.br/imgres/arquivos/ids/7225911-1000-1000/smart-tv-led-full-hd-43--lg-43lf6350-webos-2-0-3-hdmi-time-machine-ii.jpg" alt="">
+                     <div class="caption">
+                        <p class="precoOriginal">R$ 2.599,00</p>
+                        <p class="precoFinal">R$ 2.199,00</p>
+                        <p class="codigoProduto">Código:#29837</p>
+                        <label >Sobre:</label>
+                        <div class="caption descricaoProduto">A Smart TV LG 43LF6350 possui tela LED de 43” e imagem Full HD com resolução 1920x1080 pixels, oferecendo imagens de qualidade, cenas com maior profundidade e riqueza de detalhes. Inteligente, além de funcionar como uma TV convencional, ela foi desenvolvida para acessar a internet e aplicativos on demand (com Wi-fi integrado), sendo ideal para usuários que desejam controlar, configurar e personalizar sua programação. Este modelo conta com recursos exclusivos que tornam a experiência do usuário interativa e interessante, além de um design diferenciado, elegante e moderno com bordas finas e base arrojada.</div>
+                        <p><a class="btn btn-primary botaoComprar" role="button" >Comprar</a> <a href="#" class="btn btn-default botaoAdicionarCarrinho" role="button">Adicionar à Lista de Desejos</a></p>
+                     </div>
+                  
+               </div>
+            </div>
+         </div>
+
+         <div class="col-sm-6 col-md-4">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h3 class="panel-title" class="nomeProduto">Lava e Seca LG 8,5kg</h3> 
+                  <p class="categoriaProduto">Eletrodoméstico</p>
+                  <div class="quantidadeProduto">Qtde.1</div>
+               </div>
+               <div class="panel-body">
+                  
+                     <img class="imagemProduto" src="https://static.wmobjects.com.br/imgres/arquivos/ids/2493289-1000-1000/lava-e-seca-lg-85kg-prime-touch-6-motion-wd-1485at-branca.jpg" alt="">
+                     <div class="caption">
+                        <p class="precoOriginal">RR$ 2.898,00</p>
+                        <p class="precoFinal">R$ 2.498,00</p>
+                        <p class="codigoProduto">Código:#298232</p>
+                        <label >Sobre:</label>
+                        <div class="caption descricaoProduto">O cesto da Lava e Seca Prime Touch da LG é feito em aço inox de durabilidade prolongada. A tampa frontal permite redução no consumo de energia e de água. Lave uma grande quantidade de roupas economizando nas contas do fim do mês. Economia garantida pelo Selo Procel.</div>
+                        <p><a href="#" class="btn btn-primary botaoComprar" role="button">Comprar</a> <a href="#" class="btn btn-default botaoAdicionarCarrinho" role="button">Adicionar à Lista de Desejos</a></p>
+                     </div>
+                  
+               </div>
+            </div>
+         </div>
+
+         <div class="col-sm-6 col-md-4">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                  <h3 class="panel-title" class="nomeProduto">Micro-ondas 30 Litros LG</h3> 
+                  <p class="categoriaProduto">Eletrodoméstico</p>
+                  <div class="quantidadeProduto">Qtde.3</div>
+               </div>
+               <div class="panel-body">
+                  
+                     <img class="imagemProduto" src="https://static.wmobjects.com.br/imgres/arquivos/ids/4476685-1000-1000/micro-ondas-philco-pme25-25-litros-prata-e-espelhado.jpg" alt="">
+                     <div class="caption">
+                        <p class="precoOriginal">R$ 670,40</p>
+                        <p class="precoFinal">R$ 570,40</p>
+                        <p class="codigoProduto">Código:#298373</p>
+                        <label >Sobre:</label>
+                        <div class="caption descricaoProduto">O Micro-ondas é sem dúvidas um dos eletrodomésticos mais usados na cozinha. Pensando em levar praticidade e agilidade no preparo de alimentos, a LG desenvolveu o micro-ondas LG MS3059L.
+                        Fabricado em aço e com 800watts de potência, o micro-ondas economiza energia tornando o produto perfeito para compor sua cozinha.
+                        Com capacidade de 30 litros, você terá receitas pré-programadas com facilidade, são elas: 9 funções do menu brasileiro, 4 menu light e 4 do menu Infantil, para preparar arroz, macarrão, pizza, salgadinhos, bolo, batata assada, milanesa, linguiça, vegetais – sopas, frutas, biscoitos,hambúrguer, pipoca, pudim de leite, brigadeiro.</div>
+                        <p><a href="#" class="btn btn-primary botaoComprar" role="button">Comprar</a> <a href="#" class="btn btn-default botaoAdicionarCarrinho" role="button" >Adicionar à Lista de Desejos</a></p>
+                     </div>
+                  
+               </div>
+            </div>
+         </div>
+
+         
+</div>
+      </div>
+
+   </div>
+   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+   <!-- Latest compiled and minified JavaScript -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+   <script src="js/main.js"></script>
+</body>
+
+</html>
